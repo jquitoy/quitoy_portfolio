@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Work - Joshua Quitoy</title>
+    <script>
+        // Check for saved dark mode preference immediately to prevent flash
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        /* Dark mode overrides */
+        .dark body {
+            background-color: #111827 !important;
+        }
+        .dark .academic-card {
+            background-color: #1f2937 !important;
+            color: #f3f4f6 !important;
+        }
+        .dark h1, .dark h2, .dark h3 {
+            color: #ffffff !important;
+        }
+        .dark p, .dark .text-gray-600 {
+            color: #d1d5db !important;
+        }
+        .dark .role-badge {
+            background-color: #374151 !important;
+            color: #e5e7eb !important;
+        }
+        .dark .back-link {
+            color: #93c5fd !important;
+        }
+        .dark .back-link:hover {
+            color: #bfdbfe !important;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="transition-colors duration-300 bg-gray-100 dark:bg-gray-900 font-['Inter']">
+
+    <div class="max-w-4xl px-4 py-8 mx-auto">
+        <!-- Back Navigation -->
+        <a href="portfolio.html" class="inline-flex items-center gap-2 mb-8 text-blue-500 transition-colors back-link hover:text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            Back to Portfolio
+        </a>
+
+        <!-- Page Header -->
+        <header class="mb-12">
+            <h1 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Academic Work and Achievements</h1>
+            <p class="text-gray-600 dark:text-gray-400">A collection of academic endeavors, bootcamps, and achievements showcasing my growth and contributions.</p>
+        </header>
+
+        <!-- Ignite Bootcamp -->
+        <article id="ignite" class="p-8 mb-8 bg-white shadow-md academic-card dark:bg-gray-800 rounded-xl scroll-mt-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Ignite Bootcamp</h2>
+                <span class="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-full role-badge dark:bg-purple-900/30 dark:text-purple-400">Team Leader / Pitcher</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2025</span>
+            </div>
+            
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">Venture Idea Development - Philippines</p>
+            
+            <p class="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
+                Participated in the Ignite Bootcamp, a venture idea development program in the Philippines. As the team leader and pitcher, I led our team in conceptualizing and presenting <strong>PaQueuePo</strong> — an AI-powered solution designed to revolutionize how people experience queues. Our innovative approach transforms time wasted into time created, offering a smarter way to manage and reduce waiting times across various industries.
+            </p>
+
+            <!-- Project Images -->
+            <div class="relative mb-6">
+                <div class="overflow-hidden bg-gray-100 rounded-lg dark:bg-gray-700">
+                    <div id="ignite-carousel" class="flex transition-transform duration-300 ease-in-out">
+                        <img src="assets/academics/PaQueuePo.png" alt="PaQueuePo" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/academics/photo1.jpg" alt="Ignite Bootcamp 1" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/academics/photo2.jpg" alt="Ignite Bootcamp 2" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/academics/photo3.jpg" alt="Ignite Bootcamp 3" class="flex-shrink-0 object-contain w-full h-64">
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="ignite-prev" class="absolute p-2 transition-colors -translate-y-1/2 rounded-full shadow-md left-2 top-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="ignite-next" class="absolute p-2 transition-colors -translate-y-1/2 rounded-full shadow-md right-2 top-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center gap-2 mt-3">
+                    <button class="w-2 h-2 transition-colors bg-gray-300 rounded-full ignite-dot dark:bg-gray-600" data-index="0"></button>
+                    <button class="w-2 h-2 transition-colors bg-gray-300 rounded-full ignite-dot dark:bg-gray-600" data-index="1"></button>
+                    <button class="w-2 h-2 transition-colors bg-gray-300 rounded-full ignite-dot dark:bg-gray-600" data-index="2"></button>
+                    <button class="w-2 h-2 transition-colors bg-gray-300 rounded-full ignite-dot dark:bg-gray-600" data-index="3"></button>
+                </div>
+            </div>
+
+            <!-- Key Highlights -->
+            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <h3 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white">Key Highlights</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Venture Development</span>
+                    <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">AI Solutions</span>
+                    <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pitching</span>
+                    <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Team Leadership</span>
+                    <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Problem Solving</span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        // Carousel functionality for Ignite
+        const igniteCarousel = document.getElementById('ignite-carousel');
+        const ignitePrev = document.getElementById('ignite-prev');
+        const igniteNext = document.getElementById('ignite-next');
+        const igniteDots = document.querySelectorAll('.ignite-dot');
+        let igniteCurrentSlide = 0;
+        const igniteTotalSlides = 4;
+
+        function updateIgniteCarousel() {
+            igniteCarousel.style.transform = `translateX(-${igniteCurrentSlide * 100}%)`;
+            igniteDots.forEach((dot, index) => {
+                if (index === igniteCurrentSlide) {
+                    dot.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+                    dot.classList.add('bg-blue-500', 'dark:bg-blue-400');
+                } else {
+                    dot.classList.remove('bg-blue-500', 'dark:bg-blue-400');
+                    dot.classList.add('bg-gray-300', 'dark:bg-gray-600');
+                }
+            });
+        }
+
+        ignitePrev.addEventListener('click', () => {
+            igniteCurrentSlide = (igniteCurrentSlide - 1 + igniteTotalSlides) % igniteTotalSlides;
+            updateIgniteCarousel();
+        });
+
+        igniteNext.addEventListener('click', () => {
+            igniteCurrentSlide = (igniteCurrentSlide + 1) % igniteTotalSlides;
+            updateIgniteCarousel();
+        });
+
+        igniteDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                igniteCurrentSlide = index;
+                updateIgniteCarousel();
+            });
+        });
+
+        // Initialize
+        updateIgniteCarousel();
+    </script>
+</body>
+</html>

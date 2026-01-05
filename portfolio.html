@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Quitoy</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%236366f1'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125' /%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        /* Dark mode overrides */
+        .dark .content-card,
+        .dark .sidebar-card,
+        .dark .profile-header-card,
+        .dark .footer-card {
+            background-color: #1f2937 !important;
+            color: #f3f4f6 !important;
+        }
+        .dark .card-header h2,
+        .dark .profile-name,
+        .dark h3 {
+            color: #ffffff !important;
+        }
+        .dark .profile-location,
+        .dark .profile-title,
+        .dark .card-body p,
+        .dark .tech-category-title {
+            color: #d1d5db !important;
+        }
+        .dark .tech-tag {
+            background-color: #374151 !important;
+            color: #e5e7eb !important;
+        }
+        .dark .btn-secondary-light {
+            background-color: #374151 !important;
+            color: #f3f4f6 !important;
+            border-color: #4b5563 !important;
+        }
+        .dark .project-item,
+        .dark .certification-item,
+        .dark .experience-item {
+            border-color: #4b5563 !important;
+        }
+        .dark .project-link,
+        .dark .certification-link,
+        .dark .social-item,
+        .dark .contact-item,
+        .dark .membership-link {
+            color: #93c5fd !important;
+        }
+        .dark .view-all-link {
+            color: #60a5fa !important;
+        }
+        .dark body,
+        .dark .main-container {
+            background-color: #111827 !important;
+        }
+        .dark .achievement-banner-inline {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+        }
+        /* Dark mode hover effects */
+        .dark .btn-secondary-light:hover {
+            background-color: #4b5563 !important;
+        }
+        .dark .project-link:hover,
+        .dark .certification-link:hover,
+        .dark .social-item:hover,
+        .dark .contact-item:hover,
+        .dark .membership-link:hover {
+            color: #bfdbfe !important;
+            background-color: #374151 !important;
+        }
+        .dark .project-item:hover,
+        .dark .certification-item:hover,
+        .dark .experience-item:hover {
+            background-color: #374151 !important;
+        }
+        .dark .tech-tag:hover {
+            background-color: #4b5563 !important;
+        }
+        .dark .view-all-link:hover {
+            color: #93c5fd !important;
+        }
+        .dark .content-card:hover,
+        .dark .sidebar-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        }
+    </style>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="transition-colors duration-300 bg-gray-100 dark:bg-gray-900">
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Profile Header Card - Full Width -->
+        <section class="profile-header-card dark:!bg-gray-800 dark:!text-white relative">
+            <!-- Dark Mode Toggle -->
+            <button id="darkModeToggle" class="absolute z-50 p-2 transition-colors bg-gray-200 rounded-full shadow-lg top-4 right-4 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+                <!-- Sun icon (shown in dark mode) -->
+                <svg id="sunIcon" class="hidden w-6 h-6 text-yellow-500 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <!-- Moon icon (shown in light mode) -->
+                <svg id="moonIcon" class="block w-6 h-6 text-gray-700 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+            <div class="profile-left">
+                <img src="assets\1x1.png" alt="Joshua Quitoy" class="flex-shrink-0 object-cover w-40 h-40 rounded-lg md:w-40 md:h-40">
+            </div>
+            <div class="profile-center">
+                <h1 class="profile-name dark:text-white">
+                    Joshua Quitoy
+                </h1>
+                <p class="profile-location dark:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-[1em] h-[1em] align-middle">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    Roxas City, Philippines</p>
+                <p class="text-lg font-bold profile-title dark:text-gray-300">Bachelor of Science in Computer Science</p>
+                <!-- Tailwind Test: This text should be red if Tailwind works -->
+                <!-- <p class="mb-2 text-xs text-red-500">🔴 If this text is red, Tailwind is working!</p> -->
+                <div class="action-buttons-inline !flex !flex-nowrap !gap-2 w-full">
+                    <a href="mailto:joshuaquitoy22@gmail.com?subject=INQUIRY%20FROM%20E-PORTFOLIO" class="!flex-1 !min-w-0 !py-2 !px-3 rounded-lg bg-black text-white dark:bg-white dark:text-black hover:!bg-gray-700 dark:hover:!bg-gray-300 transition-colors duration-200 font-medium text-center no-underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-[1em] h-[1em] align-middle">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                        Send an Email
+                    </a>
+
+                    <a href="https://www.facebook.com/shuakitoy" class="btn btn-secondary-light !flex-1 !min-w-0 !py-2 !px-3 rounded-lg hover:!bg-gray-100 dark:hover:!bg-gray-600 transition-colors duration-200 text-center no-underline"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-[1em] h-[1em] align-middle">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                        Facebook</a>
+                    <a href="https://www.linkedin.com/in/joshua-quitoy-46b884349/" class="btn btn-secondary-light !flex-1 !min-w-0 !py-2 !px-3 rounded-lg hover:!bg-gray-100 dark:hover:!bg-gray-600 transition-colors duration-200 text-center no-underline"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-[1em] h-[1em] align-middle">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        </svg>
+                        LinkedIn</a>                
+                    </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="content-card">
+            <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                </svg>
+                <h2 class="text-lg font-bold">About</h2>
+            </div>
+            <div class="card-body">
+                <p>Computer Science student and campus journalist passionate about the intersection of technology, narrative, and impact. I bridge the gap between complex research and public understanding, aiming to develop and communicate innovations that solve tangible, real-world problems. Driven by curiosity and a commitment to evidence-based solutions.</p>
+            </div>
+        </section>
+
+        <!-- Organizations Section -->
+        <aside class="sidebar-card dark:!bg-gray-800 md:!row-span-2 h-full flex flex-col">
+            <div class="card-header !border-b-0 !pb-0 !mb-2">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                    </svg>
+                    <h2 class="dark:text-white">Organizations</h2>
+                </div>
+            </div>
+            <div class="flex flex-col flex-1 card-body">
+                <div class="relative flex flex-col justify-between flex-1 mt-3">
+                    <!-- Timeline line -->
+                    <div class="absolute left-2 top-2 bottom-2 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+                    
+                    <!-- Organization 1 - Current/Featured -->
+                    <div class="relative py-1 pl-8 group">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-blue-500 border-2 border-blue-500 rounded-full top-2"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight text-blue-500 transition-colors">Managing Editor for Finance and Property</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo</span>
+                                <span class="px-2 py-1 font-mono text-xs text-blue-600 bg-blue-100 border border-blue-200 rounded-full dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-400">2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization 2 -->
+                    <div class="relative py-1 pl-8 group hover:opacity-80">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-white border-2 border-gray-300 rounded-full top-2 dark:border-gray-600 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:border-blue-500"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight transition-colors dark:text-white group-hover:text-blue-500">Associate Editor for Online Activities</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo</span>
+                                <span class="px-2 py-1 font-mono text-xs bg-gray-100 border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600">2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization 3 -->
+                    <div class="relative py-1 pl-8 group hover:opacity-80">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-white border-2 border-gray-300 rounded-full top-2 dark:border-gray-600 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:border-blue-500"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight transition-colors dark:text-white group-hover:text-blue-500">Editorial Assistant</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo</span>
+                                <span class="px-2 py-1 font-mono text-xs bg-gray-100 border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization 4 -->
+                    <div class="relative py-1 pl-8 group hover:opacity-80">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-white border-2 border-gray-300 rounded-full top-2 dark:border-gray-600 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:border-blue-500"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight transition-colors dark:text-white group-hover:text-blue-500">Editor-in-Chief</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo - Senior</span>
+                                <span class="px-2 py-1 font-mono text-xs bg-gray-100 border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization 5 -->
+                    <div class="relative py-1 pl-8 group hover:opacity-80">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-white border-2 border-gray-300 rounded-full top-2 dark:border-gray-600 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:border-blue-500"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight transition-colors dark:text-white group-hover:text-blue-500">Staff Writer</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo - Senior</span>
+                                <span class="px-2 py-1 font-mono text-xs bg-gray-100 border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organization 6 -->
+                    <div class="relative py-1 pl-8 group hover:opacity-80">
+                        <div class="absolute left-0 w-4 h-4 transition-colors bg-white border-2 border-gray-300 rounded-full top-2 dark:border-gray-600 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:border-blue-500"></div>
+                        <div class="space-y-1.5">
+                            <h3 class="text-base font-semibold leading-tight transition-colors dark:text-white group-hover:text-blue-500">Staff Writer</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">The Hillside Echo - Junior</span>
+                                <span class="px-2 py-1 font-mono text-xs bg-gray-100 border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600">2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Skills Section -->
+        <section class="content-card">
+            <div class="flex items-center gap-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                </svg>
+
+                <h2 class="text-lg font-bold">Skills</h2>
+            </div>
+            <div class="card-body">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Technical Development</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Research & Analysis</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Research</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Investigative Research</span>
+                        <span class="tech-tag">Critical Thinking</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Communication & Storytelling</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Technical Writing</span>
+                        <span class="tech-tag">Storytelling</span>
+                        <span class="tech-tag">Editing</span>
+                        <span class="tech-tag">Public Speaking</span>
+                        <span class="tech-tag">Interviewing</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Innovation & Project Leadership</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Product Development</span>
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Design Thinking</span>
+                        <span class="tech-tag">Prototyping</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Core Professional Skills</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Problem Solving</span>
+                        <span class="tech-tag">Creative Problem Solving</span>
+                        <span class="tech-tag">Collaboration</span>
+                        <span class="tech-tag">Team Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beyond Coding Section -->
+        <section class="content-card card-half">
+            <div class="flex items-center gap-2 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                </svg>
+                <h2 class="text-lg font-bold">Beyond Coding</h2>
+            </div>
+            <div class="card-body">
+                <p>Campus journalism has shaped me into a more efficient problem solver by teaching me to prioritize solutions that place the user first. Through investigative reporting and editorial work, I've learned to listen deeply, understand diverse perspectives, and communicate complex ideas clearly.</p>
+                <p class="mt-2">It has allowed me to work with different people with different personalities. Learning how to work with people with different work ethics and processes allowed me to set boundaries in how a project should be done. </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="content-card card-half md:!col-span-4">
+            <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    <h2 class="text-lg font-bold">Recent Projects</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="projects.html#oams" class="project-link">
+                    <div class="project-item">
+                        <h3>Online Activities Management System</h3>
+                        <p>Workflow automation tool for content publishing and staff coordination</p>
+                        <span class="project-url">2025</span>
+                    </div>
+                </a>
+
+                <a href="projects.html#peclatice" class="project-link">
+                    <div class="project-item">
+                        <h3>Peclatice Residence</h3>
+                        <p>Premium real estate showcase for luxury residential properties</p>
+                        <span class="project-url">2024</span>
+                    </div>
+                </a>
+
+                <a href="projects.html#fcu-shop" class="project-link">
+                    <div class="project-item">
+                        <h3>FCU University Enterprise Online Shop</h3>
+                        <p>E-commerce platform for university merchandise and supplies</p>
+                        <span class="project-url">2023</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="content-card card-half md:!col-span-4">
+            <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                    </svg>
+                    <h2 class="text-lg font-bold">Certificates and Awards</h2>
+                </div>
+                <a href="certificates.html" class="view-all-link">View All</a>
+            </div>
+            <div class="card-body">
+                <!-- Individual Awards - 2 column grid -->
+                <div class="grid grid-cols-1 gap-2 mb-3 md:grid-cols-2">
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">First Place, Feature Writing (English)</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">PIA VI COPRE 2025</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">First Place, Best Layout Tabloid</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">PIA VI COPRE 2025</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">First Place, Research Presenter</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">SHS Colloquium 2023</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Best Research</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">SHS Colloquium 2023</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Second Place, Code Debugging</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">CCS Week 2025</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Second Place, Mobile Journalism</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">25th Word Cup</div>
+                    </div>
+                </div>
+                <!-- Consecutive Year Awards - Full width -->
+                <div class="flex flex-col gap-2">
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Academic Awardee</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">2024 • 2025</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Model Student Awardee</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">2024 • 2025</div>
+                    </div>
+                    <div class="px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                        <div class="font-semibold text-gray-800 dark:text-gray-200">Journalism Awardee</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">2024 • 2025</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section - Sidebar -->
+        <section class="sidebar-card sidebar-experience md:!col-span-2">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                    </svg>
+                    <h2 class="font-bold text-md">Academic Work and Achievements</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="academic.html" class="block p-4 mb-4 transition-all bg-gray-50 dark:bg-gray-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600/50">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white">Ignite Bootcamp</h3>
+                        <span class="text-xs text-gray-500 dark:text-gray-400">2025</span>
+                    </div>
+                    <p class="mb-2 text-xs text-gray-500 dark:text-gray-400">Venture Idea Development - Philippines</p>
+                    <span class="inline-block px-2 py-1 mb-3 text-xs font-medium text-purple-600 bg-purple-100 rounded-full dark:bg-purple-900/30 dark:text-purple-400">Team Leader / Pitcher</span>
+                    <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        Pitched <strong>PaQueuePo</strong> — an AI-powered solution to queues, turning time wasted into time created.
+                    </p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Memberships Section -->
+        <section class="content-card md:!col-span-2">
+            <div class="flex items-center gap-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                </svg>
+                <h2 class="text-lg font-bold">A member of</h2>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="https://www.facebook.com/thehillsidecho" target="_blank" class="flex items-center justify-between px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">The Hillside Echo</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/MentorsCircle" target="_blank" class="flex items-center justify-between px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">Mentor's Circle</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61566853502805" target="_blank" class="flex items-center justify-between px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">PostScript</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Links Section -->
+        <section class="content-card md:!col-span-2">
+            <div class="flex items-center gap-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+                <h2 class="text-lg font-bold">Social Links</h2>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="https://www.linkedin.com/in/joshua-quitoy-46b884349/" target="_blank" class="flex items-center gap-3 px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">LinkedIn</span>
+                </a>
+                <a href="https://github.com/jquitoy" target="_blank" class="flex items-center gap-3 px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/shuarmaaa/" target="_blank" class="flex items-center gap-3 px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span class="font-semibold text-gray-800 dark:text-gray-200">Instagram</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-card md:!col-span-2">
+            <div class="flex items-center gap-2 mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+                <h2 class="text-lg font-bold">Get in touch</h2>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="mailto:joshuaquitoy22@gmail.com?subject=INQUIRY%20FROM%20E-PORTFOLIO" class="flex items-center justify-between px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600 dark:text-gray-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">joshuaquitoy22@gmail.com</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/shuakitoy/" target="_blank" class="flex items-center justify-between px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">Facebook</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </a>
+                <button onclick="copyToClipboard('09123456789', this)" class="flex items-center justify-between w-full px-3 py-2 text-sm transition-all bg-gray-100 border border-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600 dark:text-gray-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                        <span class="font-semibold text-gray-800 dark:text-gray-200">09123456789</span>
+                    </div>
+                    <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mb--3 footer-card">
+            <p>© 2026 Joshua Quitoy. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="portfolio.js"></script>
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            html.classList.toggle('light');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.querySelector('span.font-semibold');
+                const originalValue = originalText.textContent;
+                originalText.textContent = 'Copied!';
+                button.classList.add('!bg-green-100', 'dark:!bg-green-800');
+                setTimeout(() => {
+                    originalText.textContent = originalValue;
+                    button.classList.remove('!bg-green-100', 'dark:!bg-green-800');
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
+

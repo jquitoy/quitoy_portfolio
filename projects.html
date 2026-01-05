@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Joshua Quitoy</title>
+    <script>
+        // Check for saved dark mode preference immediately to prevent flash
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        /* Dark mode overrides */
+        .dark body {
+            background-color: #111827 !important;
+        }
+        .dark .project-card {
+            background-color: #1f2937 !important;
+            color: #f3f4f6 !important;
+        }
+        .dark h1, .dark h2, .dark h3 {
+            color: #ffffff !important;
+        }
+        .dark p, .dark .text-gray-600 {
+            color: #d1d5db !important;
+        }
+        .dark .role-badge {
+            background-color: #374151 !important;
+            color: #e5e7eb !important;
+        }
+        .dark .back-link {
+            color: #93c5fd !important;
+        }
+        .dark .back-link:hover {
+            color: #bfdbfe !important;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="transition-colors duration-300 bg-gray-100 dark:bg-gray-900 font-['Inter']">
+
+    <div class="max-w-4xl px-4 py-8 mx-auto">
+        <!-- Back Navigation -->
+        <a href="portfolio.html" class="inline-flex items-center gap-2 mb-8 text-blue-500 transition-colors back-link hover:text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            Back to Portfolio
+        </a>
+
+        <!-- Page Header -->
+        <header class="mb-12">
+            <h1 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">My Projects</h1>
+            <p class="text-gray-600 dark:text-gray-400">A collection of projects I've worked on, showcasing my skills in web development and problem-solving.</p>
+        </header>
+
+        <!-- Project 1: Online Activities Management System (2025) -->
+        <article id="oams" class="p-8 mb-8 bg-white shadow-md project-card dark:bg-gray-800 rounded-xl scroll-mt-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Online Activities Management System</h2>
+                <span class="px-3 py-1 text-sm font-medium text-purple-600 bg-purple-100 rounded-full role-badge dark:bg-purple-900/30 dark:text-purple-400">Project Manager/Full-Stack Developer/Technical Writer</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2025</span>
+            </div>
+            
+            <p class="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
+                A comprehensive workflow automation tool designed to streamline content publishing and staff coordination for online activities. The system provides an intuitive dashboard for managing posts, scheduling content, assigning tasks to team members, and tracking the progress of online campaigns and activities.
+            </p>
+
+            <!-- Project Images Carousel -->
+            <div class="relative mb-6">
+                <div class="overflow-hidden bg-gray-100 rounded-lg dark:bg-gray-700">
+                    <div id="oams-carousel" class="flex transition-transform duration-300 ease-in-out">
+                        <img src="assets/OA1.png" alt="OAMS Screenshot 1" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/OA2.png" alt="OAMS Screenshot 2" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/OA3.png" alt="OAMS Screenshot 3" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/OA4.png" alt="OAMS Screenshot 4" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/OA5.png" alt="OAMS Screenshot 5" class="flex-shrink-0 object-contain w-full h-64">
+                        <img src="assets/OA6.png" alt="OAMS Screenshot 6" class="flex-shrink-0 object-contain w-full h-64">
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="oams-prev" class="absolute p-2 transition-colors -translate-y-1/2 rounded-full shadow-md left-2 top-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="oams-next" class="absolute p-2 transition-colors -translate-y-1/2 rounded-full shadow-md right-2 top-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700 dark:text-gray-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center gap-2 mt-3">
+                    <button class="w-2 h-2 bg-blue-500 rounded-full oams-dot" data-index="0"></button>
+                    <button class="w-2 h-2 bg-gray-300 rounded-full oams-dot dark:bg-gray-600" data-index="1"></button>
+                    <button class="w-2 h-2 bg-gray-300 rounded-full oams-dot dark:bg-gray-600" data-index="2"></button>
+                    <button class="w-2 h-2 bg-gray-300 rounded-full oams-dot dark:bg-gray-600" data-index="3"></button>
+                    <button class="w-2 h-2 bg-gray-300 rounded-full oams-dot dark:bg-gray-600" data-index="4"></button>
+                    <button class="w-2 h-2 bg-gray-300 rounded-full oams-dot dark:bg-gray-600" data-index="5"></button>
+                </div>
+            </div>
+
+            <!-- My Role -->
+            <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">My Role</h3>
+                <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+					As the Project Manager, Full-Stack Developer, and Technical Writer, I demonstrated my ability to adapt and manage multiple responsibilities simultaneously despite the substantial workload. I designed and built the entire system from the ground up, automated google calendar sync, created the responsive front-end dashboard, and implemented real-time notifications for task updates. Additionally, I conducted user research and produced comprehensive documentation to ensure the system met staff needs.
+                </p>
+            </div>
+
+            <!-- Technologies Used -->
+            <div>
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Technologies Used</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Django</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Python</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">HTML</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">DaisyUI</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">MySQL</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">JavaScript</span>
+                </div>
+            </div>
+        </article>
+        <article id="peclatice" class="p-8 mb-8 bg-white shadow-md project-card dark:bg-gray-800 rounded-xl scroll-mt-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Peclatice Residence</h2>
+                <span class="px-3 py-1 text-sm font-medium text-green-600 bg-green-100 rounded-full role-badge dark:bg-green-900/30 dark:text-green-400">Project Manager/Front-End Developer</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2024</span>
+            </div>
+            
+            <p class="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
+                A premium real estate showcase website designed to highlight luxury residential properties. The website features elegant design, smooth animations, and an intuitive user interface that allows potential buyers to explore high-end residences with detailed property information, image galleries, and virtual tour capabilities.
+            </p>
+
+            <!-- Project Images -->
+            <div class="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
+                <img src="assets/PR1.jpg" alt="Peclatice Residence Screenshot 1" class="object-cover w-full h-48 rounded-lg">
+                <img src="assets/PR2.png" alt="Peclatice Residence Screenshot 2" class="object-cover w-full h-48 rounded-lg">
+            </div>
+
+            <!-- My Role -->
+            <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">My Role</h3>
+                <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+                    As the Front-End Developer, I focused on creating a visually stunning and responsive user interface that reflects the premium nature of the properties being showcased. I implemented smooth scroll animations, interactive property galleries, and ensured cross-browser compatibility. I worked closely with the design team to bring their vision to life while maintaining optimal performance.
+                </p>
+            </div>
+
+            <!-- Technologies Used -->
+            <div>
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Technologies Used</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">HTML</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">CSS</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">JavaScript</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 3: FCU University Enterprise Online Shop (2023) -->
+        <article id="fcu-shop" class="p-8 mb-8 bg-white shadow-md project-card dark:bg-gray-800 rounded-xl scroll-mt-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">FCU University Enterprise Online Shop</h2>
+                <span class="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-100 rounded-full role-badge dark:bg-blue-900/30 dark:text-blue-400">Project Manager</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2023</span>
+            </div>
+            
+            <p class="mb-6 leading-relaxed text-gray-600 dark:text-gray-300">
+                A comprehensive e-commerce platform developed for the university enterprise, enabling students, faculty, and staff to purchase official merchandise, school supplies, and university-branded items online. The platform streamlines the purchasing process and provides a seamless shopping experience with secure payment integration.
+            </p>
+
+            <!-- Project Images -->
+            <div class="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
+                <img src="assets/UE1.png" alt="FCU University Enterprise Online Shop Screenshot 1" class="object-cover w-full h-48 rounded-lg">
+                <img src="assets/UE2.png" alt="FCU University Enterprise Online Shop Screenshot 2" class="object-cover w-full h-48 rounded-lg">
+            </div>
+
+            <!-- My Role -->
+            <div class="mb-6">
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">My Role</h3>
+                <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+                    As the Project Manager, I was responsible for ensuring that our team was on schedule. I analyzed whether or not some features where needed or not and managed our team based on their strengths. I also guided our team on how we should present ourselves, leading us to win the Best Research award for the TVL strand.
+                </p>
+            </div>
+
+            <!-- Technologies Used -->
+            <div>
+                <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Technologies Used</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">HTML</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">CSS</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">JavaScript</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">PHP</span>
+                    <span class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">MySQL</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <script>
+        // OAMS Carousel functionality
+        const carousel = document.getElementById('oams-carousel');
+        const prevBtn = document.getElementById('oams-prev');
+        const nextBtn = document.getElementById('oams-next');
+        const dots = document.querySelectorAll('.oams-dot');
+        let currentIndex = 0;
+        const totalSlides = 6;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+                    dot.classList.add('bg-blue-500');
+                } else {
+                    dot.classList.remove('bg-blue-500');
+                    dot.classList.add('bg-gray-300', 'dark:bg-gray-600');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>
